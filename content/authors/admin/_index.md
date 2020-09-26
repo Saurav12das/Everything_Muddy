@@ -47,12 +47,15 @@ social:
 - icon: envelope
   icon_pack: fas
   link: '#contact'  # For a direct email link, use "mailto:saurav12das@gmail.com".
+
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/Moutain_Soul
+
 - icon: google-scholar
-  icon_pack: "ai"
+  icon_pack: ai
   link: https://scholar.google.com/citations?user=184srWEAAAAJ&hl=en
+
 - icon: github
   icon_pack: fab
   link: https://github.com/Saurav12das

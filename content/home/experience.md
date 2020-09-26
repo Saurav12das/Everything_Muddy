@@ -23,7 +23,6 @@ date_format = "Jan 2006"
   company = "University of Nebraska - Lincoln'
   date_start = "2020-01-01"
   date_end = ""
-
 """
 [[experience]]
   title = "Visiting Scientis"

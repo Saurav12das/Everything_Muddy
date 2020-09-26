@@ -71,4 +71,6 @@ user_groups:
 - Researchers
 - Visitors
 ---
-I am a post doctoral research associate at the Panhandle Research & Extension Center, University of Nebraska, Nebraska, USA at "Maharjan's Soil Science Lab". I am interested in lot of things in Science but mostly involved in research including Soil Health, Geomicrobiology (especially functional microbial ecology study), Plant-Microbe Interactions, Antibiotic Resistance and Data-Science. On a lazy day you may find me on lake side doing fishing and having beer. I am known for being enthusiastic collaborator and critical scientific thinking. 
+I am a post doctoral research associate at the Panhandle Research & Extension Center, University of Nebraska, Nebraska, USA at "Maharjan's Soil Science Lab". I am interested in lot of things in Science but mostly involved in research including Soil Health, Geomicrobiology (especially functional microbial ecology study), Plant-Microbe Interactions, Antibiotic Resistance and Data-Science. On a lazy day you may find me on lake side doing fishing and having beer. 
+
+<i> Science is always fun, Lets do some science </i>

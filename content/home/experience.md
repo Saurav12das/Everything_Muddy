@@ -18,7 +18,7 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 """
-[[experienc]]
+[[experience]]
   title = "Post doctoral research associate"
   company = "University of Nebraska - Lincoln'
   date_start = "2020-01-01"

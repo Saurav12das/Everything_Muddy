@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Nelson Bighetti
+title: Saurav Das
 
 # Username (this should match the folder name)
 authors:
@@ -10,31 +10,33 @@ authors:
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+role: Post Doctoral Research Associate
 
 # Organizations/Affiliations
 organizations:
-- name: Stanford University
-  url: ""
+- name: University of Nebraska - Lincoln
+  url: "https://agronomy.unl.edu/maharjan-research-people"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research interests include Soil Health, Geomicrobiology, Antibiotic Resistance and Data Science.
 
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Soil Health
+- Geomicrobiology
+- Plant-Microbe Interactions
+- Antibiotic Resistance
+- Data Science
 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
+  - course: PhD in Microbiology
+    institution: Assam Agricultural University, Assam, India
+    year: 2017
+  - course: M.Sc. in Biotechnology
+    institution: Dibrugarh University, Assam, India
+    year: 2010
+  - course: BSc in Zoology
+    institution: Dibrugarh University, Assam, India
     year: 2008
 
 # Social/Academic Networking
@@ -44,16 +46,16 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
+  link: '#contact'  # For a direct email link, use "mailto:saurav12das@gmail.com".
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
+  link: https://twitter.com/Moutain_Soul
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://scholar.google.com/citations?user=184srWEAAAAJ&hl=en
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/Saurav12das
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -69,7 +71,4 @@ user_groups:
 - Researchers
 - Visitors
 ---
-
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+I am a post doctoral research associate at the Panhandle Research & Extension Center, University of Nebraska, Nebraska, USA at "Maharjan's Soil Science Lab". I am interested in lot of things in Science but mostly involved in research including Soil Health, Geomicrobiology (especially functional microbial ecology study), Plant-Microbe Interactions, Antibiotic Resistance and Data-Science. On a lazy day you may find me on lake side doing fishing and having beer. I am known for being enthusiastic collaborator and critical scientific thinking. 

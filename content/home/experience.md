@@ -21,18 +21,19 @@ date_format = "Jan 2006"
 [[experienc]]
   title = "Post doctoral research associate"
   company = "University of Nebraska - Lincoln'
-  date_start = "2020- 01 - 01"
+  date_start = "2020-01-01"
   date_end = ""
+
 """
 [[experience]]
   title = "Visiting Scientis"
-  company = "University of Nebraska - Lincoln"
+  company = "University of Nebraska-Lincoln"
   company_url = ""
   location = "Nebraska, USA"
   date_start = "2018-07-01"
   date_end = "2019-12-30"
   description = "Plant_Genetics: Proso Millet and Pey"
-  Responsibilities include:
+  Responsibilities include=
   * Conducting Variety Trials for Pea and Millet
   * Phenotyping for Pea and Millet
   * Crossing competant varieties to develop drough resistant millet
@@ -45,7 +46,7 @@ date_format = "Jan 2006"
   date_start = "2018-01-01"
   date_end = "2016-06-30"
   description = "Teaching and Research"
-  Responsibilites include:
+  Responsibilites include=
   *Involved in supervising undergrad and grad students for their researach work and teaching (sub: Microbial Biotechnology)
 """
   [[experience]]
@@ -56,7 +57,7 @@ date_format = "Jan 2006"
   date_start = "2016-02-01"
   date_end = "2017-08-30"
   description = """Teaching and Research"""
-  Responsibilities include:
+  Responsibilities include=
   * <i>Teaching undergrad/grad student (sub: Agricultural Microbiology, Microbial Diversity, Basic Microbiology, Plant-Protection and Integraded Disease Management)</i>
   * <i>Supervising them for their respective research work.</i>
  """

@@ -52,8 +52,9 @@ social:
   icon_pack: fab
   link: https://twitter.com/Moutain_Soul
 
-- icon: google-scholar
-  icon_pack: ai
+[[params.social]]
+- icon: "google-scholar
+  icon_pack: "ai"
   link: https://scholar.google.com/citations?user=184srWEAAAAJ&hl=en
 
 - icon: github

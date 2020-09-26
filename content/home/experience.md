@@ -36,8 +36,7 @@ date_format = "Jan 2006"
   * Conducting Variety Trials for Pea and Millet
   * Phenotyping for Pea and Millet
   * Crossing competant varieties to develop drough resistant millet
-  """
-
+"""
 [[experience]]
   title = "Research Associate"
   company = "B.N. College"
@@ -48,8 +47,7 @@ date_format = "Jan 2006"
   description = "Teaching and Research"
   Responsibilites include:
   *Involved in supervising undergrad and grad students for their researach work and teaching (sub: Microbial Biotechnology)
-  """
-  
+"""
   [[experience]]
   title = "Guest Faculty"
   company = "Sikkim University"
@@ -61,5 +59,5 @@ date_format = "Jan 2006"
   Responsibilities include:
   * <i>Teaching undergrad/grad student (sub: Agricultural Microbiology, Microbial Diversity, Basic Microbiology, Plant-Protection and Integraded Disease Management)</i>
   * <i>Supervising them for their respective research work.</i>
-
+ """
 +++

@@ -251,4 +251,4 @@ plugins_js  = ["custom"]
 ############################
 [icon.pack]
   ai = true  # Academicons icon pack https://jpswalsh.github.io/academicons/
-+++
+

@@ -88,7 +88,7 @@ show_related = {docs = true, page = false, post = true, project = true, publicat
 ############################
 
 # Enter contact details (optional). To hide a field, clear it to "".
-email = "sdas4@unl.edu"
+email = ""
 phone = ""
 
 # Address
@@ -154,7 +154,7 @@ abstract_length = 135
 
 # Load JS plugins
 #   E.g. To load `/assets/js/custom.js`, set `plugins_js = ["custom"]`.
-plugins_js  = ["custom"]
+plugins_js  = []
 
 # Avatars.
 # An avatar is an image that appears next to a user's name.

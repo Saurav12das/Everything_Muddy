@@ -22,7 +22,7 @@ date_format = "Jan 2006"
 title = "Post Doctoral Research Associate"
 company= "University of Nebraska-Lincoln"
 date_start="Jan 2020"
-date_end = ""
+date_end = 
 description="Soil Health"
 """
 [[experience]]

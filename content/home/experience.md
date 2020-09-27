@@ -17,18 +17,17 @@ date_format = "Jan 2006"
 #   Required fields are `title`, `company`, and `date_start`.
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
-
 [[experience]]
-title = "Post Doctoral Research Associate"
-company= "University of Nebraska-Lincoln"
+title ="Post Doctoral Research Associate"
+company="University of Nebraska Lincoln"
 location="Scottsbluff, NE, USA"
 date_start="Jan 2020"
-date_end = ""
-description="Soil Health""
+date_end=""
+description="""Soil Health"""
 """
 [[experience]]
 title="Visiting Scientist"
-company="University of Nebraska-Lincoln"
+company="University of Nebraska Lincoln"
 location="Scottsbluff, NE, USA"
 date_start="Jul 2018"
 date_end="Dec 2019"

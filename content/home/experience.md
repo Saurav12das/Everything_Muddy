@@ -22,14 +22,7 @@ title ="Post Doctoral Research Associate"
 company="University of Nebraska Lincoln"
 location="Scottsbluff, NE, USA"
 date_start="Jan 2020"
-date_end=""
+date_end= ""
 description="""Soil Health"""
-"""
-[[experience]]
-title="Visiting Scientist"
-company="University of Nebraska Lincoln"
-location="Scottsbluff, NE, USA"
-date_start="Jul 2018"
-date_end="Dec 2019"
-description=""Plant Genetics""
+
 +++

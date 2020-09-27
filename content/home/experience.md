@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 40  # Order that this section will appear.
 
 title = "Experience"
-subtitle = "T"
+subtitle = ""
 
 # Date format for experience
 #   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
@@ -17,7 +17,6 @@ date_format = "Jan 2006"
 #   Required fields are `title`, `company`, and `date_start`.
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
-"""
 [[experience]]
   title = "Post doctoral research associate"
   company = "University of Nebraska - Lincoln'
@@ -59,5 +58,4 @@ date_format = "Jan 2006"
   Responsibilities include=
   * Teaching undergrad/grad student (sub: Agricultural Microbiology, Microbial Diversity, Basic Microbiology, Plant-Protection and Integraded Disease Management)
   * Supervising them for their respective research work.
- """
 +++

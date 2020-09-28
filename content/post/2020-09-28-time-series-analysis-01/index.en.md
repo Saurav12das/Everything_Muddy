@@ -1,0 +1,161 @@
+---
+title: Time Series Analysis_01
+author: Saurav Das
+date: '2020-09-28'
+slug: time-series-analysis-01
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-09-28T00:36:30-06:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+Loading all the library
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(ggpubr)
+```
+
+Loading the data (I had the weather data for our research station collected from https://hprcc.unl.edu/)
+
+```{r}
+WD <- read.csv(file = "C://Users//saura//Box//2020//Deepak_MS_Thesis//Weather_Data.csv", header = TRUE, sep = ",")
+head(WD)
+```
+
+Then I checked the data structure with function str()
+
+```{r}
+str(WD)
+```
+
+If you check the Date variable the data is in chr or character format but we want this in data and time format so here the function parse_date_time (from lubridate package) can be used to convert/transform the character vector to date and time.
+
+```{r}
+WD$Date <- parse_date_time(WD$Date, orders = "mdy", tz = "America/Denver")
+WD$Dates <- as.Date(WD$Date) # I just wanted to create another variable column naming Dates from the Date variable, so I don't much mess up with the original colum while wrangling (and truley speaking which is actually not necessary you can easily extract the time series data with lubridate package once it is converted to posiXct format)
+```
+
+When I checked my location there was 6 different values, but I had only four research station, then I found out some of the names were in capital letters and some were in small so I changed them to small letters
+
+```{r}
+WD$Location[WD$Location == "GRANT"] <- "Grant"
+WD$Location[WD$Location == "MEAD"] <- "Mead"
+```
+
+And then my friend told me he need everything in capital and he wants to use research station name instead of location, so here I am again changing the name
+
+```{r}
+WD$Location[WD$Location == "Mead"] <- "ENREC"
+WD$Location[WD$Location == "Scottsbluff"] <- "PREC"
+WD$Location[WD$Location == "Grant"] <- "GRANT"
+#out of four one location, one was already named accroding to its research station, so I didn't changed (it was HPAL: High Plains Agricultural Lab, Sidney, NE)
+```
+
+Then again if you look at the data structure, the Max.Temp and Min.Temp which should be numeric variable but it is in character format (as there were some missing data point which were replaced with some letters)
+
+```{r}
+WD$Max.Temp <- as.numeric(WD$Max.Temp)
+WD$Min.Temp <- as.numeric(WD$Min.Temp)
+WD$Precipitation <- as.numeric(WD$Precipitation)
+```
+
+Lets check again if things are perfect,
+
+```{r}
+str(WD)
+```
+
+So, the variables which I need are fine now, so lets plot few graphs
+
+```{r}
+P1 <- WD %>% mutate(year = year(Date), months = month(Date)) %>% 
+  filter(year %in% 2018:2019) %>% group_by(year) %>% 
+  filter(between(Dates, as.Date("2018-08-01"), as.Date("2019-08-30"))) %>% ggplot(aes(Dates)) + 
+  geom_line(aes(y = Max.Temp, color = "red")) + 
+  scale_x_date(date_labels = "%b", date_breaks = "1 month") + 
+  geom_line(aes(y = Min.Temp,color = "blue")) + facet_wrap(~Location) +
+  labs(x = "Month", y = "Temperature (°F)", title = "2018 - 2019") + 
+  theme(axis.text.x = element_text(angle = 45)) +
+  scale_color_identity(guide = "legend", name = "Temperature (°F)", breaks = 
+                         c("red", "blue"), labels = c("Maximum Temperature",
+                                                      "Minimum Temperature"))
+  
+#Lets see, what I did here
+
+# I used mutate function to create variables extracting the year and month from the Date so that I can use them later for grouping and filtering the data accordingly
+
+#for first plot I filtered the year 2018 and 2019 from the dataset
+
+#For scaling the x axis I used scale_x_date function, which is much easier rather than creating breaks and limits in scale_x_discrete/scale_x_continuous to properly arrange your axis and here you can use month or week or year breaks defining the limits like 1 week or 4 weeks or say 1 month or 10 years
+
+# I used a variable for first plot or named it as P1 so I can use it in later for other functions
+
+#Another interesting things if you see/ or you want to try, Initally I created the plots without using color as asthetics then I couldn't access the legend function, so I used the color in aes argument in geom_line but after that I saw aes treated them as string variable and my color was not true color they were something else, so I had to fix that using the scale_color_idenity function
+
+#I used facet_wrap to seperate the locations
+
+P1
+```
+Then plot 2 same things but for different year groups:
+
+```{r}
+P2 <- WD %>% mutate(year = year(Date), months = month(Date)) %>% 
+  filter(year %in% 2019:2020) %>% group_by(year) %>% 
+  filter(between(Dates, as.Date("2019-09-01"), as.Date("2020-08-30"))) %>% ggplot(aes(Dates)) + 
+  geom_line(aes(y = Max.Temp, color = "red"), na.rm = TRUE) + 
+  scale_x_date(date_labels = "%b", date_breaks = "1 month") + 
+  geom_line(aes(y = Min.Temp, color = "blue"), na.rm = TRUE) + facet_wrap(~Location) +
+  labs(x = "Month", y = "Temperature (°F)", title = "2019 - 2020") +
+  theme(axis.text.x = element_text(angle = 45)) +
+  scale_color_identity(guide = "legend", name = "Temperature (°F)", breaks = 
+                         c("red", "blue"), labels = c("Maximum Temperature",
+                                                      "Minimum Temperature"))
+P2
+```
+
+Oky now again another problem, if you see the graph, though I mentioned to used to plot the graph from September to Next year Aug, but for some reason Sep is not showing in the plot (and trust me I tried whole bunch of codes and going through a lot of pages in stackoverflow) then what I did is, I just set a minimum limit for for the scale_x_date using min and max and tada, it worked
+
+```{r}
+min <- as.Date("2019-9-1")
+max <- NA
+P2 <- WD %>% mutate(year = year(Date), months = month(Date)) %>% 
+  filter(year %in% 2019:2020) %>% group_by(year) %>% 
+  filter(between(Dates, as.Date("2019-09-01"), as.Date("2020-08-30"))) %>% ggplot(aes(Dates)) + 
+  geom_line(aes(y = Max.Temp, color = "red"), na.rm = TRUE) + 
+  scale_x_date(date_labels = "%b", date_breaks = "1 month", 
+               labels = c("Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar",
+                          "Apr", "May", "Jun", "Jul"), limits = c(min, max)) + 
+  geom_line(aes(y = Min.Temp, color = "blue"), na.rm = TRUE) + facet_wrap(~Location) +
+  labs(x = "Month", y = "Temperature (°F)", title = "2019 - 2020") +
+  theme(axis.text.x = element_text(angle = 45)) +
+  scale_color_identity(guide = "legend", name = "Temperature (°F)", breaks = 
+                         c("red", "blue"), labels = c("Maximum Temperature",
+                                                      "Minimum Temperature"))
+
+P2
+```
+
+Then I tried to group the plots using plot_grid function from cowplot but, truely speaking I didn't like it and I wanted to use same legend for both plots and do some few annotation, then I looked here and there and I found there is one function in ggpubr which is ggarrange and you can use it to do a bit more than just stacking the plots (followed by this code)
+
+
+```{r}
+library(cowplot)
+plot_grid(P1, P2)
+```
+And I used ggarrange along with annotate_figure function to further arrange and annotate the figure and tada, here is the final plot
+
+```{r}
+figure <- ggarrange(P1, P2, common.legend = TRUE, legend = "bottom")
+annotate_figure(figure, top = 
+                  text_grob("Daily Minimum and Maximum temperature", size = 16))
+```

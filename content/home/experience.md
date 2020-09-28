@@ -21,8 +21,8 @@ date_format = "Jan 2006"
 title ="Post Doctoral Research Associate"
 company="University of Nebraska Lincoln"
 location="Scottsbluff, NE, USA"
-date_start="Jan 2020"
+date_start="2020-01-01"
 date_end= ""
-description="""Soil Health"""
+description="""
 
 +++

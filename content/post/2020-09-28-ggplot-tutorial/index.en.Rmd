@@ -1,0 +1,100 @@
+---
+title: Ggplot Tutorial
+author: Saurav Das
+date: '2020-09-28'
+slug: ggplot-tutorial
+categories:
+  - Tidyverse
+tags:
+  - Tutorial
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-09-28T02:07:13-06:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In this blog post, I am gonna talk about the ggplot2. ggplot2 is based on the idea of "grammar of graphics" which means a graphs can be build from same basic components like : Data, Geoms (Marks or points that represents the data point) and a coordinate system (x, y, z etc).
+
+And with ggplot2 you can also play with aesthetics of geoms like size, color, location/position of your data points on coordinate system using "aes" argument.
+
+So, lets make some plots and while going through the plotting, I will try to explain the details of arguments and  codes for particular plots.
+
+I am going to use inbuilt dataset "mtcars" and "mpg" for plotting.
+
+So, if you look at the data, it looks like this.
+
+```{r}
+head(mtcars)
+```
+
+Before starting, you need to install the packages and if you already have the packages, you can load the same using "library" function or if you don't have them, use "install.packages" for installation and after that use "library" to load the particular package. Along with ggplot2, I also installed dplyr package as it gives you more power to mutate or filter your data and other interesting twitch and tweaks.
+
+```{r}
+library(ggplot2)
+library(dplyr)
+```
+
+1. Lets draw a density plot. Density plot is generally used to study the distribution of variables. 
+So, lets say I want to check the distribution of 'mpg' in our dataset, how you are going to do it. So, for that I used the dataset "mtcars" with pipe (%>%) function to plot. pipe function (package = dplyr) lets you join several arguments together rather than writing each of them separate or in repeated mode. And to add function in ggplot you need to use "+" sign. So here we use the ggplot (which will draw the coordinate system) and added to the geom, as we are drawing density plot, the geom is density. Lets say if want to draw line plot, or bar plot you can change the geom accordingly i.e. geom_point, geom_line, geom_bar etc. and As I am going to plot mpg as variable for the plot. So, inside aes, whatever you wrote first is considered as x and second argument will be considered as y.
+
+so, if you write something like
+
+ggplot(mtcars, aes(cyl,mpg)); it will mean mtcars is your data and for geom x= cyl and y= mpg.
+
+```{r}
+mtcars %>% ggplot() + geom_density(aes(mpg))
+```
+1. (i) Lets say you want to fill the plot area with red color. Okay, before going to that, I want point out something important, so if you want to modify your geom or data points you need to use your arguments within aesthetic function, however if it is to modify the background of overall visual of the plot, you can use arguments outside of aes or aesthetic function.
+
+so, for filling the density plot with red, we can modify our codes like:
+
+```{r}
+mtcars %>% ggplot(aes()) + geom_density(aes(mpg), fill = "red")
+```
+
+2. Lets say you want to draw a bar chart. For this lets use mpg dataset.
+
+```{r}
+mpg
+```
+
+```{r}
+mpg %>% ggplot(aes(class)) + geom_bar()
+```
+
+2. (i) Position: bar plots automatically plotted into stacked position when multiple bars are plotted on single point.Like the plot below which was plotted for drive (like front wheel, 4 wheel or rear wheel drive) for different classes of vehicles and the bars were asethetically filled using the drv variable.
+
+```{r}
+mpg %>% ggplot(aes(class)) + geom_bar(aes(fill = drv))
+```
+
+2. (ii) But lets say you want them in dodge position, what to do now, you just need to add one position function with dodge argument.
+
+```{r}
+mpg %>% ggplot(aes(class)) + geom_bar(aes(fill = drv), position = "dodge")
+```
+
+2(iii) how about flipping the coordinate? So here one thing to remember when you keep adding the functions in ggplot it should be added with  "+" sign. so, here we are adding "coord_flip" with previous code.
+
+```{r}
+mpg %>% ggplot(aes(class)) + geom_bar(aes(fill = drv), position = "dodge") + coord_flip()
+```
+
+Before wrapping up the post, how about we make a data-frame from scratch using some codes:
+So, here we made one students data table with their name and marks.
+
+```{r}
+std.data <- data.frame(std_id = c(1:5), 
+                       std_name=c("Sam", "Rick", "Dan", "Ryan", "Rex"),
+                       Marks = c(80, 85, 93, 95, 88))
+print(std.data)
+```

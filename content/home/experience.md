@@ -28,9 +28,10 @@ experience:
 - company: University of Nebraska Lincoln
   company_url: ""
   date_end: ""
-  date_start: "202--01-01"
+  date_start: "2020-01-01"
   description: |-
     Responsibilities include:
+    * Soil Health Studies
     * Conducting Field Experiments
     * Synthesizing Data, Analysis and Publishing
     * Project Management

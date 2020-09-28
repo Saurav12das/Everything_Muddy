@@ -18,7 +18,11 @@ image:
   preview_only: no
 projects: []
 ---
-Loading all the library
+Loading all the library for analysis
+1. ggplot2 : for visualization
+2. dplyr : for data wrangling
+3. lubridate : to work with time series data
+4. ggpubr : for anotating and arranging the plots
 
 ```{r message=FALSE, warning=FALSE}
 library(ggplot2)

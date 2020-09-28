@@ -165,3 +165,4 @@ figure <- ggarrange(P1, P2, common.legend = TRUE, legend = "bottom")
 annotate_figure(figure, top = 
                   text_grob("Daily Minimum and Maximum temperature", size = 16))
 ```
+-end

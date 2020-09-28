@@ -25,6 +25,7 @@ interests:
 - Geomicrobiology
 - Plant-Microbe Interactions
 - Water Quality and Antibiotic Resistance
+- Plant Genetics
 - Data Science
 
 education:

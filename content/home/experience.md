@@ -25,7 +25,7 @@ date_start="2020-01-01"
 date_end= ""
 """
 [[experience]]
-title ="Visting Scientist"
+title ="Visiting Scientist"
 company="University of Nebraska Lincoln"
 location="Scottsbluff, NE, USA"
 date_start="2018-07-01"

@@ -51,7 +51,7 @@ features = ["page builder", "widgets", "themes", "search", "research publication
 name = "my_theme"
 
 # Is theme light or dark?
-light = true
+light = dark
 
 # Primary
 primary = "#EF476F"

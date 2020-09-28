@@ -14,7 +14,7 @@ baseurl = "https://saurav-das.netlify.app/"
 
 # Enter a copyright notice to display in the site footer.
 # To display a copyright symbol, type `&copy;`. For current year, type `{year}`.
-copyright = "saurav_das_2020"
+copyright = "&copy; Saurav Das {year}"
 
 ############################
 ## Advanced options below ##

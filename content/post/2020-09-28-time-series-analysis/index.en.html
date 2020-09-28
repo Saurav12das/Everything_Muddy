@@ -1,0 +1,186 @@
+---
+title: Time Series Analysis
+author: Saurav Das
+date: '2020-09-28'
+slug: time-series-analysis
+categories:
+  - Time Series
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-09-28T01:00:01-06:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+rmd: TRUE
+---
+
+
+
+<p>Loading all the library</p>
+<pre class="r"><code>library(ggplot2)
+library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(lubridate)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;lubridate&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     date, intersect, setdiff, union</code></pre>
+<pre class="r"><code>library(ggpubr)</code></pre>
+<p>Loading the data (I had the weather data for our research station collected from <a href="https://hprcc.unl.edu/" class="uri">https://hprcc.unl.edu/</a>)</p>
+<pre class="r"><code>WD &lt;- read.csv(file = &quot;C://Users//saura//Box//2020//Deepak_MS_Thesis//Weather_Data.csv&quot;, header = TRUE, sep = &quot;,&quot;)
+head(WD)</code></pre>
+<pre><code>##        Date Max.Temp Min.Temp Avg.Temp Precipitation Precipitation.Normal
+## 1 9/17/2018       84       61     72.5             T                 0.05
+## 2 9/18/2018       92       57     74.5             T                 0.05
+## 3 9/19/2018       79       60     69.5          0.02                 0.05
+## 4 9/20/2018       68       54       61          0.01                 0.04
+## 5 9/21/2018       75       43       59             0                 0.04
+## 6 9/22/2018       77       40     58.5             0                 0.04
+##   Snowfall Snow.Depth GDD     Month    Location Year
+## 1        0          0  23 September Scottsbluff    1
+## 2        0          0  25 September Scottsbluff    1
+## 3        0          0  20 September Scottsbluff    1
+## 4        0          0  11 September Scottsbluff    1
+## 5        0          0   9 September Scottsbluff    1
+## 6        0          0   9 September Scottsbluff    1</code></pre>
+<p>Then I checked the data structure with function str()</p>
+<pre class="r"><code>str(WD)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    2432 obs. of  12 variables:
+##  $ Date                : chr  &quot;9/17/2018&quot; &quot;9/18/2018&quot; &quot;9/19/2018&quot; &quot;9/20/2018&quot; ...
+##  $ Max.Temp            : chr  &quot;84&quot; &quot;92&quot; &quot;79&quot; &quot;68&quot; ...
+##  $ Min.Temp            : chr  &quot;61&quot; &quot;57&quot; &quot;60&quot; &quot;54&quot; ...
+##  $ Avg.Temp            : chr  &quot;72.5&quot; &quot;74.5&quot; &quot;69.5&quot; &quot;61&quot; ...
+##  $ Precipitation       : chr  &quot;T&quot; &quot;T&quot; &quot;0.02&quot; &quot;0.01&quot; ...
+##  $ Precipitation.Normal: chr  &quot;0.05&quot; &quot;0.05&quot; &quot;0.05&quot; &quot;0.04&quot; ...
+##  $ Snowfall            : chr  &quot;0&quot; &quot;0&quot; &quot;0&quot; &quot;0&quot; ...
+##  $ Snow.Depth          : chr  &quot;0&quot; &quot;0&quot; &quot;0&quot; &quot;0&quot; ...
+##  $ GDD                 : chr  &quot;23&quot; &quot;25&quot; &quot;20&quot; &quot;11&quot; ...
+##  $ Month               : chr  &quot;September&quot; &quot;September&quot; &quot;September&quot; &quot;September&quot; ...
+##  $ Location            : chr  &quot;Scottsbluff&quot; &quot;Scottsbluff&quot; &quot;Scottsbluff&quot; &quot;Scottsbluff&quot; ...
+##  $ Year                : int  1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<p>If you check the Date variable the data is in chr or character format but we want this in data and time format so here the function parse_date_time (from lubridate package) can be used to convert/transform the character vector to date and time.</p>
+<pre class="r"><code>WD$Date &lt;- parse_date_time(WD$Date, orders = &quot;mdy&quot;, tz = &quot;America/Denver&quot;)
+WD$Dates &lt;- as.Date(WD$Date) # I just wanted to create another variable column naming Dates from the Date variable, so I don&#39;t much mess up with the original colum while wrangling (and truley speaking which is actually not necessary you can easily extract the time series data with lubridate package once it is converted to posiXct format)</code></pre>
+<p>When I checked my location there was 6 different values, but I had only four research station, then I found out some of the names were in capital letters and some were in small so I changed them to small letters</p>
+<pre class="r"><code>WD$Location[WD$Location == &quot;GRANT&quot;] &lt;- &quot;Grant&quot;
+WD$Location[WD$Location == &quot;MEAD&quot;] &lt;- &quot;Mead&quot;</code></pre>
+<p>And then my friend told me he need everything in capital and he wants to use research station name instead of location, so here I am again changing the name</p>
+<pre class="r"><code>WD$Location[WD$Location == &quot;Mead&quot;] &lt;- &quot;ENREC&quot;
+WD$Location[WD$Location == &quot;Scottsbluff&quot;] &lt;- &quot;PREC&quot;
+WD$Location[WD$Location == &quot;Grant&quot;] &lt;- &quot;GRANT&quot;
+#out of four one location, one was already named accroding to its research station, so I didn&#39;t changed (it was HPAL: High Plains Agricultural Lab, Sidney, NE)</code></pre>
+<p>Then again if you look at the data structure, the Max.Temp and Min.Temp which should be numeric variable but it is in character format (as there were some missing data point which were replaced with some letters)</p>
+<pre class="r"><code>WD$Max.Temp &lt;- as.numeric(WD$Max.Temp)</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre class="r"><code>WD$Min.Temp &lt;- as.numeric(WD$Min.Temp)</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre class="r"><code>WD$Precipitation &lt;- as.numeric(WD$Precipitation)</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<p>Lets check again if things are perfect,</p>
+<pre class="r"><code>str(WD)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    2432 obs. of  13 variables:
+##  $ Date                : POSIXct, format: &quot;2018-09-17&quot; &quot;2018-09-18&quot; ...
+##  $ Max.Temp            : num  84 92 79 68 75 77 89 90 71 63 ...
+##  $ Min.Temp            : num  61 57 60 54 43 40 42 49 41 34 ...
+##  $ Avg.Temp            : chr  &quot;72.5&quot; &quot;74.5&quot; &quot;69.5&quot; &quot;61&quot; ...
+##  $ Precipitation       : num  NA NA 0.02 0.01 0 0 0 NA 0.02 0.01 ...
+##  $ Precipitation.Normal: chr  &quot;0.05&quot; &quot;0.05&quot; &quot;0.05&quot; &quot;0.04&quot; ...
+##  $ Snowfall            : chr  &quot;0&quot; &quot;0&quot; &quot;0&quot; &quot;0&quot; ...
+##  $ Snow.Depth          : chr  &quot;0&quot; &quot;0&quot; &quot;0&quot; &quot;0&quot; ...
+##  $ GDD                 : chr  &quot;23&quot; &quot;25&quot; &quot;20&quot; &quot;11&quot; ...
+##  $ Month               : chr  &quot;September&quot; &quot;September&quot; &quot;September&quot; &quot;September&quot; ...
+##  $ Location            : chr  &quot;PREC&quot; &quot;PREC&quot; &quot;PREC&quot; &quot;PREC&quot; ...
+##  $ Year                : int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ Dates               : Date, format: &quot;2018-09-17&quot; &quot;2018-09-18&quot; ...</code></pre>
+<p>So, the variables which I need are fine now, so lets plot few graphs</p>
+<pre class="r"><code>P1 &lt;- WD %&gt;% mutate(year = year(Date), months = month(Date)) %&gt;% 
+  filter(year %in% 2018:2019) %&gt;% group_by(year) %&gt;% 
+  filter(between(Dates, as.Date(&quot;2018-08-01&quot;), as.Date(&quot;2019-08-30&quot;))) %&gt;% ggplot(aes(Dates)) + 
+  geom_line(aes(y = Max.Temp, color = &quot;red&quot;)) + 
+  scale_x_date(date_labels = &quot;%b&quot;, date_breaks = &quot;1 month&quot;) + 
+  geom_line(aes(y = Min.Temp,color = &quot;blue&quot;)) + facet_wrap(~Location) +
+  labs(x = &quot;Month&quot;, y = &quot;Temperature (°F)&quot;, title = &quot;2018 - 2019&quot;) + 
+  theme(axis.text.x = element_text(angle = 45)) +
+  scale_color_identity(guide = &quot;legend&quot;, name = &quot;Temperature (°F)&quot;, breaks = 
+                         c(&quot;red&quot;, &quot;blue&quot;), labels = c(&quot;Maximum Temperature&quot;,
+                                                      &quot;Minimum Temperature&quot;))
+  
+#Lets see, what I did here
+
+# I used mutate function to create variables extracting the year and month from the Date so that I can use them later for grouping and filtering the data accordingly
+
+#for first plot I filtered the year 2018 and 2019 from the dataset
+
+#For scaling the x axis I used scale_x_date function, which is much easier rather than creating breaks and limits in scale_x_discrete/scale_x_continuous to properly arrange your axis and here you can use month or week or year breaks defining the limits like 1 week or 4 weeks or say 1 month or 10 years
+
+# I used a variable for first plot or named it as P1 so I can use it in later for other functions
+
+#Another interesting things if you see/ or you want to try, Initally I created the plots without using color as asthetics then I couldn&#39;t access the legend function, so I used the color in aes argument in geom_line but after that I saw aes treated them as string variable and my color was not true color they were something else, so I had to fix that using the scale_color_idenity function
+
+#I used facet_wrap to seperate the locations
+
+P1</code></pre>
+<p><img src="/post/2020-09-28-time-series-analysis/index.en_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+Then plot 2 same things but for different year groups:</p>
+<pre class="r"><code>P2 &lt;- WD %&gt;% mutate(year = year(Date), months = month(Date)) %&gt;% 
+  filter(year %in% 2019:2020) %&gt;% group_by(year) %&gt;% 
+  filter(between(Dates, as.Date(&quot;2019-09-01&quot;), as.Date(&quot;2020-08-30&quot;))) %&gt;% ggplot(aes(Dates)) + 
+  geom_line(aes(y = Max.Temp, color = &quot;red&quot;), na.rm = TRUE) + 
+  scale_x_date(date_labels = &quot;%b&quot;, date_breaks = &quot;1 month&quot;) + 
+  geom_line(aes(y = Min.Temp, color = &quot;blue&quot;), na.rm = TRUE) + facet_wrap(~Location) +
+  labs(x = &quot;Month&quot;, y = &quot;Temperature (°F)&quot;, title = &quot;2019 - 2020&quot;) +
+  theme(axis.text.x = element_text(angle = 45)) +
+  scale_color_identity(guide = &quot;legend&quot;, name = &quot;Temperature (°F)&quot;, breaks = 
+                         c(&quot;red&quot;, &quot;blue&quot;), labels = c(&quot;Maximum Temperature&quot;,
+                                                      &quot;Minimum Temperature&quot;))
+P2</code></pre>
+<p><img src="/post/2020-09-28-time-series-analysis/index.en_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Oky now again another problem, if you see the graph, though I mentioned to used to plot the graph from September to Next year Aug, but for some reason Sep is not showing in the plot (and trust me I tried whole bunch of codes and going through a lot of pages in stackoverflow) then what I did is, I just set a minimum limit for for the scale_x_date using min and max and tada, it worked</p>
+<pre class="r"><code>min &lt;- as.Date(&quot;2019-9-1&quot;)
+max &lt;- NA
+P2 &lt;- WD %&gt;% mutate(year = year(Date), months = month(Date)) %&gt;% 
+  filter(year %in% 2019:2020) %&gt;% group_by(year) %&gt;% 
+  filter(between(Dates, as.Date(&quot;2019-09-01&quot;), as.Date(&quot;2020-08-30&quot;))) %&gt;% ggplot(aes(Dates)) + 
+  geom_line(aes(y = Max.Temp, color = &quot;red&quot;), na.rm = TRUE) + 
+  scale_x_date(date_labels = &quot;%b&quot;, date_breaks = &quot;1 month&quot;, 
+               labels = c(&quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;, &quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;,
+                          &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;), limits = c(min, max)) + 
+  geom_line(aes(y = Min.Temp, color = &quot;blue&quot;), na.rm = TRUE) + facet_wrap(~Location) +
+  labs(x = &quot;Month&quot;, y = &quot;Temperature (°F)&quot;, title = &quot;2019 - 2020&quot;) +
+  theme(axis.text.x = element_text(angle = 45)) +
+  scale_color_identity(guide = &quot;legend&quot;, name = &quot;Temperature (°F)&quot;, breaks = 
+                         c(&quot;red&quot;, &quot;blue&quot;), labels = c(&quot;Maximum Temperature&quot;,
+                                                      &quot;Minimum Temperature&quot;))
+
+P2</code></pre>
+<p><img src="/post/2020-09-28-time-series-analysis/index.en_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Then I tried to group the plots using plot_grid function from cowplot but, truely speaking I didn’t like it and I wanted to use same legend for both plots and do some few annotation, then I looked here and there and I found there is one function in ggpubr which is ggarrange and you can use it to do a bit more than just stacking the plots (followed by this code)</p>
+<pre class="r"><code>library(cowplot)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;cowplot&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:ggpubr&#39;:
+## 
+##     get_legend</code></pre>
+<pre><code>## The following object is masked from &#39;package:lubridate&#39;:
+## 
+##     stamp</code></pre>
+<pre class="r"><code>plot_grid(P1, P2)</code></pre>
+<p><img src="/post/2020-09-28-time-series-analysis/index.en_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+And I used ggarrange along with annotate_figure function to further arrange and annotate the figure and tada, here is the final plot</p>
+<pre class="r"><code>figure &lt;- ggarrange(P1, P2, common.legend = TRUE, legend = &quot;bottom&quot;)
+annotate_figure(figure, top = 
+                  text_grob(&quot;Daily Minimum and Maximum temperature&quot;, size = 16))</code></pre>
+<p><img src="/post/2020-09-28-time-series-analysis/index.en_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>

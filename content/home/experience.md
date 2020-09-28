@@ -39,9 +39,13 @@ experience:
   title: Post Doctoral Research Associate
 - company: University of Nebraska Lincoln
   company_url: ""
-  date_end: "2018-07-01"
-  date_start: "2019-12-30"
-  description: Plant-Genetics
+  date_end: "2019-12-30"
+  date_start: "2018-07-01"
+  description: |-
+    Responsibilites included:
+    * Conducting Variety Trials
+    * Crossing Proso Millet Varities
+    * Diversity studies and Phenotyping
   location: Scottsbluff, NE, USA
   title: Visiting Scientist
 ---

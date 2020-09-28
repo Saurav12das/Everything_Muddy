@@ -125,7 +125,7 @@ P2 <- WD %>% mutate(year = year(Date), months = month(Date)) %>%
 P2
 ```
 
-Oky now again another problem, if you see the graph, though I mentioned to used to plot the graph from September to Next year Aug, but for some reason Sep is not showing in the plot (and trust me I tried whole bunch of codes and going through a lot of pages in stackoverflow) then what I did is, I just set a minimum limit for for the scale_x_date using min and max and tada, it worked
+Oky now again another problem, if you see the graph, though I mentioned in the argument to sclae the x_axis from September to Next year Aug, but for some reason Sep is not showing in the plot (and trust me I tried whole bunch of codes and going through a lot of pages in stackoverflow) then what I did is, I just set a minimum limit for for the scale_x_date using min and max and tada, it worked
 
 ```{r}
 min <- as.Date("2019-9-1")

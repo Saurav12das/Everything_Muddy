@@ -20,7 +20,7 @@ rmd: TRUE
 ---
 Loading all the library
 
-```{r}
+```{r message=FALSE}
 library(ggplot2)
 library(dplyr)
 library(lubridate)

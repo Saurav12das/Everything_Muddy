@@ -11,8 +11,9 @@ subtitle: ''
 summary: ''
 authors: []
 lastmod: '2020-09-27T22:32:52-06:00'
+draft: true
 featured: no
-image:
+  image:
   caption: ''
   focal_point: ''
   preview_only: no

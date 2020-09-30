@@ -59,6 +59,6 @@ experience:
   location: Gangtok, Sikkim, India
   title: Guest Faculty
   description: |-
-    Responsibilites include:
+    Responsibilites included:
     * Teaching and Research
 ---

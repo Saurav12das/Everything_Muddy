@@ -53,7 +53,7 @@ experience:
   date_start: "2018-01-01"
   location: Dhubri, Assam, India
   title: Research Associate
-- compnay: Sikkim University
+- company: Sikkim University
   date_end: "2017-08-30"
   date_start:"2016-02-01"
   location: Gangtok, Sikkim, India

@@ -48,4 +48,8 @@ experience:
     * Diversity studies and Phenotyping
   location: Scottsbluff, NE, USA
   title: Visiting Scientist
+- company: BN College
+  date_end: "2018-06-30"
+  date_start: "2018-01-01"
+  title: Research Associate
 ---

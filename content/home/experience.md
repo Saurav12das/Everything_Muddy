@@ -55,10 +55,10 @@ experience:
   title: Research Associate
 - company: Sikkim University
   date_end: "2017-08-30"
-  date_start:"2016-02-01"
+  date_start: "2016-02-01"
   location: Gangtok, Sikkim, India
   title: Guest Faculty
-  description:
+  description: |-
     Responsibilites included:
     * Teaching and Research
 ---

@@ -35,7 +35,7 @@ featured: false
 # - name: ""
 #   url: ""
 url_pdf: 
-url: www.sciencedirect.com/science/article/pii/S2351989420305680
+url: http://sciencedirect.com/science/article/pii/S2351989420305680
 url_code: ''
 url_dataset: ''
 url_poster: ''

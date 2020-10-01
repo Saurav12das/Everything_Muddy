@@ -29,25 +29,20 @@ abstract: Growing calls and the need for sustainable agriculture have brought de
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
 
 tags:
-- Source Themes
+- Soil Heath
 featured: false
-
 # links:
-<<<<<<< HEAD:content/publication/Soil_Heatlh_Gap_2020/Soil_Health_Gap
- - name: "Access the paper here"
-   url: "https://www.sciencedirect.com/science/article/pii/S2351989420305680"
-url_pdf: "https://reader.elsevier.com/reader/sd/pii/S2351989420305680?token=00631631E343E5F96097A8B64ED4D835832D027B90F2A72A1C9549732327FB7BB9F1DCED3632E082385D661698402EBB"
-=======
-- name: ""
-url: https://www.sciencedirect.com/science/article/pii/S2351989420305680
-url_pdf: 
+# - name: ""
+#   url: ""
+url_pdf: ''
 url_code: ''
 url_dataset: ''
 url_poster: ''
 url_project: ''
 url_slides: ''
-url_source: ''
+url_source: 'https://www.sciencedirect.com/science/article/pii/S2351989420305680'
 url_video: ''
+
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.

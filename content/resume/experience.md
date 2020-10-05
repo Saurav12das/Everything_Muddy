@@ -48,4 +48,17 @@ experience:
     * Diversity studies and Phenotyping
   location: Scottsbluff, NE, USA
   title: Visiting Scientist
+- company: BN College
+  date_end: "2018-06-30"
+  date_start: "2018-01-01"
+  location: Dhubri, Assam, India
+  title: Research Associate
+- company: Sikkim University
+  date_end: "2017-08-30"
+  date_start: "2016-02-01"
+  location: Gangtok, Sikkim, India
+  title: Guest Faculty
+  description: |-
+    Responsibilites included:
+    * Teaching and Research
 ---

@@ -1,4 +1,6 @@
+---
 # Configuration of project pages.
+[[project]]
   # Views for associated content.
   #   1: List
   #   2: Compact
@@ -7,3 +9,4 @@
   post_view = 2
   publication_view = 2
   talk_view = 2
+---

@@ -1,0 +1,33 @@
+---
+title: 'Soil Health'
+author: Saurav Das
+date: '2020-10-05'
+slug: ''
+categories:
+  - Soil Health
+tags:
+  - Soil Health
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-10-05T01:37:10-06:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: [Soil Health]
+---
+<b> Goal: Modeling Soil Environment in Different Agroecosystems <b>
+
+For more specific:
+
+1. Developing Soil Health Index (Which can be used to define Health of a particular farm land and can be used to determine the vital capacity/yield efficiency of the land for long-term cropping system)
+
+2. Determine the core ecological community. (Though there a lot of studies how microbial/biological communities changes under different environment and management practices; but we are far behind in finding the core community which have broad distribution in particular type of environment or management practices and how we can use them towards reclaiming our degraded lands)
+
+As a first objective:
+
+we are looking for collaborators from all over the world who are actively involved/studying long-term agroecology and compile all the published report (a metadata studies) on different agroenvironment and management regimes to model a core hypothesis.
+
+You can contact: Dr. Saurav Das: "sdas4@unl.edu"

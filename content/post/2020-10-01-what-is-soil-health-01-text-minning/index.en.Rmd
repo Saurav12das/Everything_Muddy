@@ -1,0 +1,18 @@
+---
+title: What is Soil Health ? 01_ Text Minning
+author: Saurav Das
+date: '2020-10-01'
+slug: what-is-soil-health-01-text-minning
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-10-01T22:55:01-06:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---

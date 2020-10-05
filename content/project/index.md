@@ -1,5 +1,4 @@
 ---
   title: Project
-  post_view: 2
-  
+  type: widget_page
 ---

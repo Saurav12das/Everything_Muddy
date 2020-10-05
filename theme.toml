@@ -1,9 +1,9 @@
 name = "Academic"
 license = "MIT"
-licenselink = "https://github.com/wowchemy/starter-academic/blob/master/LICENSE.md"
-description = "Use the website builder to personalize your academic resumé with widgets and deploy with one click! Fully customize your site with themes, plugins, and language packs."
-homepage = "https://wowchemy.com"
-min_version = "0.73"
+licenselink = "https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md"
+description = "The website builder for Hugo. Build *anything* with widgets and deploy with one click! Fully personalize your site with themes, plugins, and language packs."
+homepage = "https://sourcethemes.com/academic/"
+min_version = "0.65"
 tags = ["widgets",
         "resume",
         "portfolio",
@@ -44,32 +44,6 @@ features = ["page builder", "widgets", "themes", "search", "research publication
 
 # If porting an existing theme
 [original]
-  name = "1950"
+  name = ""
   homepage = ""
   repo = ""
-# Theme metadata
-name = "my_theme"
-
-# Is theme light or dark?
-light = "dark"
-
-# Primary
-primary = "#EF476F"
-
-# Menu
-menu_primary = "#F7F7F7"
-menu_text = "#FCA311"
-menu_text_active = "#0EAD69"
-menu_title = "#118AB2"
-
-# Backgrounds
-background = "#F7F7F7"
-home_section_odd = "#F7F7F7"
-home_section_even = "#F7F7F7"
-
-dark_background = ""
-dark_home_section_odd = ""
-dark_home_section_even = ""
-
-link = "#D90429"
-link_hover = "#118AB2"

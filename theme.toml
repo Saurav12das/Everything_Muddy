@@ -1,52 +1,4 @@
-name = "Academic"
-license = "MIT"
-licenselink = "https://github.com/wowchemy/starter-academic/blob/master/LICENSE.md"
-description = "Use the website builder to personalize your academic resumé with widgets and deploy with one click! Fully customize your site with themes, plugins, and language packs."
-homepage = "https://wowchemy.com"
-min_version = "0.73"
-tags = ["widgets",
-        "resume",
-        "portfolio",
-        "responsive",
-        "clean",
-        "personal",
-        "company",
-        "blog",
-        "minimal",
-        "light",
-        "dark",
-        "multilingual",
-        "documentation",
-        "landing page",
-        "projects",
-        "single page",
-        "contact form",
-        "mobile",
-        "gallery",
-        "search",
-        "presentation",
-        "simple",
-        "minimalist",
-        "starter",
-        "modern",
-        "one page",
-        "customizable",
-        "technical",
-        "product",
-        "slide"
-        ]
-features = ["page builder", "widgets", "themes", "search", "research publication system", "filterable portfolio",
-            "blog", "create courses", "talks", "events", "slides", "gallery", "contact form"]
-
-[author]
-  name = "George Cushen"
-  homepage = "https://georgecushen.com"
-
-# If porting an existing theme
-[original]
-  name = "1950"
-  homepage = ""
-  repo = ""
+---
 # Theme metadata
 name = "my_theme"
 
@@ -73,3 +25,4 @@ dark_home_section_even = ""
 
 link = "#D90429"
 link_hover = "#118AB2"
+---

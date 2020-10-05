@@ -1,5 +1,4 @@
 # Configuration of project pages.
-[projects]
   # Views for associated content.
   #   1: List
   #   2: Compact

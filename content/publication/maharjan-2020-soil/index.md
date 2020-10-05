@@ -29,7 +29,7 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: ["Soil Health"]
-url: www.sciencedirect.com/science/article/pii/S2351989420305680
+url: "www.sciencedirect.com/science/article/pii/S2351989420305680"
 publishDate: '2020-10-02T01:06:53.623650Z'
 publication_types:
 - 2

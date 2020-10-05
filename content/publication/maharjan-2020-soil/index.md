@@ -8,11 +8,11 @@ authors:
 - Bijesh Maharjan
 - Saurav Das
 - Bharat Sharma Acharya
-tags: []
+tags: [Soil Health]
 categories: []
 date: '2020-01-01'
 lastmod: 2020-10-01T19:06:55-06:00
-featured: false
+featured: true
 draft: false
 
 # Featured image
@@ -29,7 +29,6 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: ["Soil Health"]
-url: "www.sciencedirect.com/science/article/pii/S2351989420305680"
 publishDate: '2020-10-02T01:06:53.623650Z'
 publication_types:
 - 2

@@ -21,7 +21,7 @@ draft: false
 image:
   caption: Graphical Representation of Soil Health Gap
   focal_point: Center
-  preview_only: false
+  preview_only: true
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.

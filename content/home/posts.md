@@ -15,7 +15,7 @@ subtitle = "From my Blog"
   page_type = "post"
   
   # Choose how much pages you would like to display (0 = all pages)
-  count = 2
+  count = 1
   
   # Choose how many pages you would like to offset by
   offset = 0
@@ -49,8 +49,8 @@ subtitle = "From my Blog"
   # color = "navy"
   
   # Background gradient.
-   gradient_start = "DeepSkyBlue"
-   gradient_end = "SkyBlue"
+  # gradient_start = "DeepSkyBlue"
+  # gradient_end = "SkyBlue"
   
   # Background image.
   # image = "background.jpg"  # Name of image in `static/media/`.

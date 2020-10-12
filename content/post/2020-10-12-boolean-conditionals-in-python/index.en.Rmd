@@ -8,6 +8,7 @@ categories:
   - Tutorials
 tags:
   - Python
+ rmd: TRUE
 ---
 
 Boolean are the variable which have two possible values. Like say True and False

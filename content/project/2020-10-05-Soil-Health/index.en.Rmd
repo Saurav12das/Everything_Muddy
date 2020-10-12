@@ -18,17 +18,19 @@ image:
   preview_only: no
 projects: [Soil Health]
 ---
-<b> Goal: Modeling Soil Environment in Different Agroecosystems <b>
+<b> Goal: Modeling Soil Environment for Different Agroecosystems </b>
 
-For more specific:
+For more specific objectives:
 
 1. Developing Soil Health Index (Which can be used to define Health of a particular farm land and can be used to determine the vital capacity/yield efficiency of the land for long-term cropping system)
 
-2. Determine the core ecological community. (Though there a lot of studies how microbial/biological communities changes under different environment and management practices; but we are far behind in finding the core community which have broad distribution in particular type of environment or management practices and how we can use them towards reclaiming our degraded lands)
+<li> We published one article in this objective: [Soil Health Gap](https://www.sciencedirect.com/science/article/pii/S2351989420305680) </li>
+
+2. Determine the core ecological community (microorganisms). (Though there are a lot of studies on how microbial/biological communities changes under different environment and management practices; but there is still less number of studies on core community which can be used as an indicators for specific soil health condition.
 
 As a first objective:
 
-we are looking for collaborators from all over the world who are actively involved/studying long-term agroecology and compile all the published report (a metadata studies) from different region of the world and correlate with agronomic management practices to model core hypothesis.
+we are looking for collaborators from all over the world who are actively involved/studying long-term agroecology. The concept is to compile and study the published data to come up with core hypothesis which can correlate ecological data, agronomic management practices to soil health status.
 
 
 

@@ -13,7 +13,7 @@ authors: []
 lastmod: '2020-10-05T01:37:10-06:00'
 featured: no
 image:
-  caption: ''
+  caption: 'Soil Health Gap'
   focal_point: ''
   preview_only: no
 projects: [Soil Health]
@@ -25,6 +25,7 @@ For more specific objectives:
 1. Developing Soil Health Index (Which can be used to define Health of a particular farm land and can be used to determine the vital capacity/yield efficiency of the land for long-term cropping system)
 
     * We published one article in this objective: [Soil Health Gap](https://www.sciencedirect.com/science/article/pii/S2351989420305680)
+    
 
 2. Determine the core ecological community (microorganisms). (Though there are a lot of studies on how microbial/biological communities changes under different environment and management practices; but there is still less number of studies on core community which can be used as an indicators for specific soil health condition.
 

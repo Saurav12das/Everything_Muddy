@@ -19,15 +19,14 @@
   weight = 40
 
 [[main]]
-  name = "Project"
-  url = "/project/"
+  name = "Projects"
+  url = "/projects"
   weight = 40
 
  [[main]]
   name = "Resume"
   url = "/resume/"
   weight = 70
-
 
 [[main]]
   name = "Contact"

@@ -52,7 +52,7 @@ subtitle = "From my Blog"
   # gradient_start = "DeepSkyBlue"
   # gradient_end = "SkyBlue"
   
-   Background image.
+   # Background image.
     image = "background.jpg.jpg"  # Name of image in `static/media/`.
   # image_darken = 0.5  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
 

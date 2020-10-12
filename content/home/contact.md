@@ -5,8 +5,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 80  # Order that this section will appear.
 
-title = "Contact"
-subtitle = ""
+title = "Hi There"
+subtitle = "This form is for contacting me about speaking engagements, opportunities to work together"
 
 # Automatically link email and phone?
 autolink = true

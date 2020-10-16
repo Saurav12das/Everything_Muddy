@@ -20,12 +20,12 @@ organizations:
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include Soil Health, Geomicrobiology, Antibiotic Resistance and Data Science.
 
-interests:
+interests: 
 - Soil Health
-- Geomicrobiology
+- Biogeochemistry
+- Microbial Ecology
 - Plant-Microbe Interactions
 - Water Quality and Antibiotic Resistance
-- Plant Genetics
 - Data Science
 
 education:

@@ -1,6 +1,8 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
-
+<div class='altmetric-embed' data-badge-type='donut'
+data-badge-popover="right"
+data-doi="10.1016/j.gecco.2020.e01116"></div>
 title: 'Soil Health Gap: A concept to establish a benchmark for soil health management'
 subtitle: ''
 summary: ''

@@ -20,12 +20,12 @@ organizations:
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include Soil Health, Geomicrobiology, Antibiotic Resistance and Data Science.
 
-interests:
+interests: 
 - Soil Health
-- Geomicrobiology
+- Biogeochemistry
+- Microbial Ecology
 - Plant-Microbe Interactions
 - Water Quality and Antibiotic Resistance
-- Plant Genetics
 - Data Science
 
 education:
@@ -79,4 +79,4 @@ user_groups:
 - Researchers
 - Visitors
 ---
-I am a post doctoral research associate in [Maharjan's Soil Science Lab](https://agronomy.unl.edu/maharjan-research-people) at the Panhandle Research & Extension Center, University of Nebraska, Nebraska, USA. I am interested in lot of things in Science but mostly involved in research including Soil Health, Geomicrobiology (especially functional microbial ecology study), Plant-Microbe Interactions, Antibiotic Resistance and Data-Science. On a lazy day you may find me on lake side doing fishing and having beer.
+I am a post doctoral research associate in [Maharjan's Soil Science Lab](https://agronomy.unl.edu/maharjan-research-people) at the Panhandle Research & Extension Center, University of Nebraska, Nebraska, USA. I am interested in lot of things in Science but mostly involved in research including Soil Health, Geomicrobiology, Plant-Microbe Interactions, Antibiotic Resistance and Data-Science. On a lazy day you may find me on lake side doing fishing and having beer.

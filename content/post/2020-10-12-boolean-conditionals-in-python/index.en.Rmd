@@ -1,0 +1,105 @@
+---
+title: Boolean & Conditionals in Python
+author: Saurav Das
+date: '2020-10-12'
+slug: boolean-conditionals-in-python
+categories:
+  - Python
+  - Tutorials
+tags:
+  - Python
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-09-28T01:00:01-06:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+Boolean are the variable which have two possible values. Like say True and False
+
+Note: I am going to run python chunks in this rmarkdown file and for this you need a package called reticulate.
+
+```{r}
+library(reticulate)
+```
+
+
+```{python}
+x = True
+print(x)
+print(type(x))
+```
+
+However, rather than describing the true or false in the code, we can get the true or false using the <b> boolean operators </b> like;
+
+a== b , a is equal to b
+a < b, a less than b
+a <= b, a less than or equal to b
+a != b, a not equal to be
+a > b, a greater than b
+a >= b, a greater than or equal to b
+
+so, lets run a function to see how it works,
+
+Lets define a function which returns whether a candidate can run for presidential election or not based on his age. (Presidential candidate age should be 35)
+
+```{python}
+def can_run_for_president(age):
+  return age >= 35
+  
+print ("Can a 25 year old run for the president?", can_run_for_president(25))
+
+print("Can a 70 year old run for the president?", can_run_for_president(70))
+```
+
+Okay, lets make it one level complicated and combine with boolean values "and" "or" and "not" 
+
+so, the condition for us presidential candidate should be: he must be a natural born citizen and at least 35 years old
+
+```{python}
+def can_run_for_president(age, is_natural_born_citizen):
+    return is_natural_born_citizen and (age >= 35)
+
+print(can_run_for_president(19, True))
+print(can_run_for_president(55, False))
+print(can_run_for_president(55, True))
+```
+Lets combine the boolean with conditionals
+"if", "else", and "elif"
+
+```{python}
+def inspect(x):
+    if x == 0:
+        print(x, "is zero")
+    elif x > 0:
+        print(x, "is positive")
+    elif x < 0:
+        print(x, "is negative")
+    else:
+        print(x, "is unlike anything I've ever seen...")
+
+inspect(0)
+inspect(-15)
+```
+Question 1:
+In the cell below, define a function called sign which takes a numerical argument and returns -1 if it's negative, 1 if it's positive, and 0 if it's 0.
+
+```{python}
+def sign(x):
+    if x == 0:
+        return 0
+    elif x>0:
+        return 1
+    else:
+        return -1
+
+sign(5)
+sign(0)
+sign(-1)
+```
+---

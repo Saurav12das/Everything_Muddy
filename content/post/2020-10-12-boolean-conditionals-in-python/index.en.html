@@ -1,0 +1,92 @@
+---
+title: Boolean & Conditionals in Python
+author: Saurav Das
+date: '2020-10-12'
+slug: boolean-conditionals-in-python
+categories:
+  - Python
+  - Tutorials
+tags:
+  - Python
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-09-28T01:00:01-06:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<p>Boolean are the variable which have two possible values. Like say True and False</p>
+<p>Note: I am going to run python chunks in this rmarkdown file and for this you need a package called reticulate.</p>
+<pre class="r"><code>library(reticulate)</code></pre>
+<pre class="python"><code>x = True
+print(x)</code></pre>
+<pre><code>## True</code></pre>
+<pre class="python"><code>print(type(x))</code></pre>
+<pre><code>## &lt;class &#39;bool&#39;&gt;</code></pre>
+<p>However, rather than describing the true or false in the code, we can get the true or false using the <b> boolean operators </b> like;</p>
+<p>a== b , a is equal to b
+a &lt; b, a less than b
+a &lt;= b, a less than or equal to b
+a != b, a not equal to be
+a &gt; b, a greater than b
+a &gt;= b, a greater than or equal to b</p>
+<p>so, lets run a function to see how it works,</p>
+<p>Lets define a function which returns whether a candidate can run for presidential election or not based on his age. (Presidential candidate age should be 35)</p>
+<pre class="python"><code>def can_run_for_president(age):
+  return age &gt;= 35
+  
+print (&quot;Can a 25 year old run for the president?&quot;, can_run_for_president(25))</code></pre>
+<pre><code>## Can a 25 year old run for the president? False</code></pre>
+<pre class="python"><code>print(&quot;Can a 70 year old run for the president?&quot;, can_run_for_president(70))</code></pre>
+<pre><code>## Can a 70 year old run for the president? True</code></pre>
+<p>Okay, lets make it one level complicated and combine with boolean values “and” “or” and “not”</p>
+<p>so, the condition for us presidential candidate should be: he must be a natural born citizen and at least 35 years old</p>
+<pre class="python"><code>def can_run_for_president(age, is_natural_born_citizen):
+    return is_natural_born_citizen and (age &gt;= 35)
+
+print(can_run_for_president(19, True))</code></pre>
+<pre><code>## False</code></pre>
+<pre class="python"><code>print(can_run_for_president(55, False))</code></pre>
+<pre><code>## False</code></pre>
+<pre class="python"><code>print(can_run_for_president(55, True))</code></pre>
+<pre><code>## True</code></pre>
+<p>Lets combine the boolean with conditionals
+“if”, “else”, and “elif”</p>
+<pre class="python"><code>def inspect(x):
+    if x == 0:
+        print(x, &quot;is zero&quot;)
+    elif x &gt; 0:
+        print(x, &quot;is positive&quot;)
+    elif x &lt; 0:
+        print(x, &quot;is negative&quot;)
+    else:
+        print(x, &quot;is unlike anything I&#39;ve ever seen...&quot;)
+
+inspect(0)</code></pre>
+<pre><code>## 0 is zero</code></pre>
+<pre class="python"><code>inspect(-15)</code></pre>
+<pre><code>## -15 is negative</code></pre>
+<p>Question 1:
+In the cell below, define a function called sign which takes a numerical argument and returns -1 if it’s negative, 1 if it’s positive, and 0 if it’s 0.</p>
+<pre class="python"><code>def sign(x):
+    if x == 0:
+        return 0
+    elif x&gt;0:
+        return 1
+    else:
+        return -1
+
+sign(5)</code></pre>
+<pre><code>## 1</code></pre>
+<pre class="python"><code>sign(0)</code></pre>
+<pre><code>## 0</code></pre>
+<pre class="python"><code>sign(-1)</code></pre>
+<pre><code>## -1</code></pre>
+<hr />

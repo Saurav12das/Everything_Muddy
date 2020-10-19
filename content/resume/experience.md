@@ -44,7 +44,7 @@ experience:
   description: |-
     Responsibilites included:
     * Conducting Variety Trials
-    * Crossing Proso Millet Varities
+    * Crossing Hybrid selections (Proso Millet)
     * Diversity studies and Phenotyping
   location: Scottsbluff, NE, USA
   title: Visiting Scientist

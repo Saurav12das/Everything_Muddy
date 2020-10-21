@@ -10,14 +10,14 @@ tags:
   - Tutorial
 ---
 
-#Data Wrangling 
+<h2> Data Wrangling </h2>
 
 ```{r message=FALSE}
 library(dplyr)
 library(plyr)
 ```
 
-####Data transformation/wrangling is one of the most important process in visualization and statistical analysis.
+<h4> Data transformation/wrangling is one of the most important process in visualization and statistical analysis </h4>
 
 So here we will use two functions from apply family. one is **aggregate** and one is **ddply**
 
@@ -61,11 +61,14 @@ Again say, you want to subset over conc and treatment so, now we will rewrite th
 aggregate(uptake ~ conc + Treatment, CO2, mean)
 ```
 
-Now, lets say you want to summarize the data for multiple functions, but you end up with errors,
+Now, lets say you want to summarize the data for multiple functions, but you end up with errors. 
 
-```{r}
-aggregate(uptake ~ conc + Treatment, CO2,summarise,mean = mean(uptake), sd = sd(uptake))
-```
+if I run something like this
+**aggregate(uptake ~ conc + Treatment, CO2,summarise,mean = mean(uptake), sd = sd(uptake))**
+
+it will give me this error
+
+<span style="color: red;">error in FUN(X[[i]], ...) : is.data.frame(.data) || is.list(.data) || is.environment(.data) is not TRUE</span>
 
 So, here we will use **ddply** from plyr package. ddply function looks like this,
 

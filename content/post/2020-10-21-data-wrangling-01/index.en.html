@@ -1,0 +1,108 @@
+---
+title: Data Wrangling_01
+author: Saurav Das
+date: '2020-10-21'
+slug: data-wrangling-01
+categories:
+  - R
+tags:
+  - R
+  - Tutorial
+---
+
+
+
+<h2>
+Data Wrangling
+</h2>
+<pre class="r"><code>library(dplyr)
+library(plyr)</code></pre>
+<h4>
+Data transformation/wrangling is one of the most important process in visualization and statistical analysis
+</h4>
+<p>So here we will use two functions from apply family. one is <strong>aggregate</strong> and one is <strong>ddply</strong></p>
+<p>The story is like, my friend was asking to plot some simple bar graphs based on his anova results (he is doing works how different rates of nitrogen can effect winter wheat yield and protein content and the experiment is replicated over four different places and four times (same treatment) in single location). He found interactions between some variables (like Nrate and Variety; Nrate and Application timings) and he wanted to do average over interactive variables and doing mean/error calculations over the replication keeping different rates/var as unique factors and plot them in simple bars using different variables as aesthetics, but it was too much struggling for me to group/subset over multiple variables and then summarize the data over some other functions. I have to go through writing several custom functions. But then I stumbled upon these functions, they are pretty handy and everything can be done in one single steps.</p>
+<p>So, I cannot use that datasets what I used, but here is a similar dataset (CO2) where,
+The CO2 uptake of six plants from Quebec and six plants from Mississippi was measured at several levels of ambient CO2 concentration. Half the plants of each type were chilled overnight before the experiment was conducted and half were non-chilled.</p>
+<p>So data structure is two location, two different treatment for each location (chilled, non-chilled), then each of the treated plant were exposed to seven different concentration of carbon dioxided and their uptake was measured and above all each plant has unique id.</p>
+<p>Lets load the data</p>
+<pre class="r"><code>data(&quot;CO2&quot;)
+head(CO2)</code></pre>
+<pre><code>##   Plant   Type  Treatment conc uptake
+## 1   Qn1 Quebec nonchilled   95   16.0
+## 2   Qn1 Quebec nonchilled  175   30.4
+## 3   Qn1 Quebec nonchilled  250   34.8
+## 4   Qn1 Quebec nonchilled  350   37.2
+## 5   Qn1 Quebec nonchilled  500   35.3
+## 6   Qn1 Quebec nonchilled  675   39.2</code></pre>
+<p>So, first we will use <strong>aggregate</strong> function</p>
+<p>###aggregate(formula,data, function,… related arguments)###</p>
+<p>where formula is y ~ x
+y = numerical varibale to be divided
+x = variable to be grouped over</p>
+<p>then data = data
+function = whatever function you want to use like mean, median, sd etc.</p>
+<p>Lets say we want to summarize the data as mean over the uptake and grouped over concentration of CO2.</p>
+<pre class="r"><code>aggregate(uptake~conc, CO2, mean) </code></pre>
+<pre><code>##   conc   uptake
+## 1   95 12.25833
+## 2  175 22.28333
+## 3  250 28.87500
+## 4  350 30.66667
+## 5  500 30.87500
+## 6  675 31.95000
+## 7 1000 33.58333</code></pre>
+<p>Again say, you want to subset over conc and treatment so, now we will rewrite the code as
+<strong>note: you can also use tapply for this function but tapply cannot handle multiple variables for grouping</strong></p>
+<pre class="r"><code>aggregate(uptake ~ conc + Treatment, CO2, mean)</code></pre>
+<pre><code>##    conc  Treatment   uptake
+## 1    95 nonchilled 13.28333
+## 2   175 nonchilled 25.11667
+## 3   250 nonchilled 32.46667
+## 4   350 nonchilled 35.13333
+## 5   500 nonchilled 35.10000
+## 6   675 nonchilled 36.01667
+## 7  1000 nonchilled 37.38333
+## 8    95    chilled 11.23333
+## 9   175    chilled 19.45000
+## 10  250    chilled 25.28333
+## 11  350    chilled 26.20000
+## 12  500    chilled 26.65000
+## 13  675    chilled 27.88333
+## 14 1000    chilled 29.78333</code></pre>
+<p>Now, lets say you want to summarize the data for multiple functions, but you end up with errors.</p>
+<p>if I run something like this
+<strong>aggregate(uptake ~ conc + Treatment, CO2,summarise,mean = mean(uptake), sd = sd(uptake))</strong></p>
+<p>it will give me this error</p>
+<p><span style="color: red;">error in FUN(X[[i]], …) : is.data.frame(.data) || is.list(.data) || is.environment(.data) is not TRUE</span></p>
+<p>So, here we will use <strong>ddply</strong> from plyr package. ddply function looks like this,</p>
+<p>ddply(
+.data,
+.variables,
+.fun = NULL,
+…,
+.progress = “none”,
+.inform = FALSE,
+.drop = TRUE,
+.parallel = FALSE,
+.paropts = NULL
+)</p>
+<p>it can be used to summarize the result and results returns as a data_frame</p>
+<pre class="r"><code>#so in .data will be our data and in variables will the variables over which grouping will happen, then .fun will be your function then ... mean addition arguments over your function like
+ddply(CO2, c(&quot;Treatment&quot;, &quot;conc&quot;), summarise, mean = mean(uptake), sd = sd(uptake))</code></pre>
+<pre><code>##     Treatment conc     mean        sd
+## 1  nonchilled   95 13.28333  2.398680
+## 2  nonchilled  175 25.11667  5.711888
+## 3  nonchilled  250 32.46667  5.924075
+## 4  nonchilled  350 35.13333  6.116099
+## 5  nonchilled  500 35.10000  5.650133
+## 6  nonchilled  675 36.01667  6.343317
+## 7  nonchilled 1000 37.38333  7.058163
+## 8     chilled   95 11.23333  2.860536
+## 9     chilled  175 19.45000  5.886510
+## 10    chilled  250 25.28333 10.569090
+## 11    chilled  350 26.20000 10.831251
+## 12    chilled  500 26.65000 11.445479
+## 13    chilled  675 27.88333 10.958361
+## 14    chilled 1000 29.78333 12.410547</code></pre>
+<p>–</p>

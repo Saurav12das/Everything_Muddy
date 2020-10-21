@@ -54,7 +54,7 @@ Lets say we want to summarize the data as mean over the uptake and grouped over 
 aggregate(uptake~conc, CO2, mean) 
 ```
 
-Again say, you want to subset over conc and treatment so, now we will rewrite the code as
+Again, may be you want to subset over conc and treatment so, now we will rewrite the code as
 **note: you can also use tapply for this function but tapply cannot handle multiple variables for grouping**
 
 ```{r}

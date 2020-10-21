@@ -54,7 +54,7 @@ function = whatever function you want to use like mean, median, sd etc.</p>
 ## 5  500 30.87500
 ## 6  675 31.95000
 ## 7 1000 33.58333</code></pre>
-<p>Again say, you want to subset over conc and treatment so, now we will rewrite the code as
+<p>Again, may be you want to subset over conc and treatment so, now we will rewrite the code as
 <strong>note: you can also use tapply for this function but tapply cannot handle multiple variables for grouping</strong></p>
 <pre class="r"><code>aggregate(uptake ~ conc + Treatment, CO2, mean)</code></pre>
 <pre><code>##    conc  Treatment   uptake

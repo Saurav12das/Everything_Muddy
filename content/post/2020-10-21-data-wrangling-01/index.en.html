@@ -20,7 +20,7 @@ library(plyr)</code></pre>
 <h4>
 Data transformation/wrangling is one of the most important process in visualization and statistical analysis
 </h4>
-<p>So here we will use two functions from apply family. one is <strong>aggregate</strong> and one is <strong>ddply</strong></p>
+<p>So here we will use two functions. one is <strong>aggregate</strong> and one is <strong>ddply</strong></p>
 <p>The story is like, my friend was asking to plot some simple bar graphs based on his anova results (he is doing works how different rates of nitrogen can effect winter wheat yield and protein content and the experiment is replicated over four different places and four times (same treatment) in single location). He found interactions between some variables (like Nrate and Variety; Nrate and Application timings) and he wanted to do average over interactive variables and doing mean/error calculations over the replication keeping different rates/var as unique factors and plot them in simple bars using different variables as aesthetics, but it was too much struggling for me to group/subset over multiple variables and then summarize the data over some other functions. I have to go through writing several custom functions. But then I stumbled upon these functions, they are pretty handy and everything can be done in one single steps.</p>
 <p>So, I cannot use that datasets what I used, but here is a similar dataset (CO2) where,
 The CO2 uptake of six plants from Quebec and six plants from Mississippi was measured at several levels of ambient CO2 concentration. Half the plants of each type were chilled overnight before the experiment was conducted and half were non-chilled.</p>

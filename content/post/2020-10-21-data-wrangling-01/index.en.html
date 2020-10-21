@@ -24,7 +24,7 @@ Data transformation/wrangling is one of the most important process in visualizat
 <p>The story is like, my friend was asking to plot some simple bar graphs based on his anova results (he is doing works how different rates of nitrogen can effect winter wheat yield and protein content and the experiment is replicated over four different places and four times (same treatment) in single location). He found interactions between some variables (like Nrate and Variety; Nrate and Application timings) and he wanted to do average over interactive variables and doing mean/error calculations over the replication keeping different rates/var as unique factors and plot them in simple bars using different variables as aesthetics, but it was too much struggling for me to group/subset over multiple variables and then summarize the data over some other functions. I have to go through writing several custom functions. But then I stumbled upon these functions, they are pretty handy and everything can be done in one single steps.</p>
 <p>So, I cannot use that datasets what I used, but here is a similar dataset (CO2) where,
 The CO2 uptake of six plants from Quebec and six plants from Mississippi was measured at several levels of ambient CO2 concentration. Half the plants of each type were chilled overnight before the experiment was conducted and half were non-chilled.</p>
-<p>So data structure is two location, two different treatment for each location (chilled, non-chilled), then each of the treated plant were exposed to seven different concentration of carbon dioxided and their uptake was measured and above all each plant has unique id.</p>
+<p>So data structure is two location, two different treatment for each location (chilled, non-chilled), then each of the treated plant were exposed to seven different concentration of carbon dioxide and their uptake was measured and above all each plant has unique id.</p>
 <p>Lets load the data</p>
 <pre class="r"><code>data(&quot;CO2&quot;)
 head(CO2)</code></pre>
@@ -36,9 +36,11 @@ head(CO2)</code></pre>
 ## 5   Qn1 Quebec nonchilled  500   35.3
 ## 6   Qn1 Quebec nonchilled  675   39.2</code></pre>
 <p>So, first we will use <strong>aggregate</strong> function</p>
-<p>###aggregate(formula,data, function,… related arguments)###</p>
+<h5>
+aggregate(formula,data, function,… related arguments)
+</h5>
 <p>where formula is y ~ x
-y = numerical varibale to be divided
+y = numerical variable to be divided
 x = variable to be grouped over</p>
 <p>then data = data
 function = whatever function you want to use like mean, median, sd etc.</p>

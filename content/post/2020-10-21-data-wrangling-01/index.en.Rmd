@@ -27,7 +27,7 @@ The story is like, my friend was asking to plot some simple bar graphs based on 
 So, I cannot use that datasets what I used, but here is a similar dataset (CO2) where,
 The CO2 uptake of six plants from Quebec and six plants from Mississippi was measured at several levels of ambient CO2 concentration. Half the plants of each type were chilled overnight before the experiment was conducted and half were non-chilled. 
 
-So data structure is two location, two different treatment for each location (chilled, non-chilled), then each of the treated plant were exposed to seven different concentration of carbon dioxided and their uptake was measured and above all each plant has unique id.
+So data structure is two location, two different treatment for each location (chilled, non-chilled), then each of the treated plant were exposed to seven different concentration of carbon dioxide and their uptake was measured and above all each plant has unique id.
 
 
 Lets load the data
@@ -39,10 +39,10 @@ head(CO2)
 
 So, first we will use **aggregate** function
 
-###aggregate(formula,data, function,... related arguments)###
+<h5> aggregate(formula,data, function,... related arguments)</h5>
 
 where formula is y ~ x
-y = numerical varibale to be divided 
+y = numerical variable to be divided 
 x = variable to be grouped over
 
 then data = data 

@@ -43,8 +43,9 @@ So, first we will use **aggregate** function
 <h5> aggregate(formula,data, function,... related arguments)</h5>
 
 where formula is y ~ x
-y = numerical variable to be divided 
-x = variable to be grouped over
+
+*y = numerical variable to be divided 
+*x = variable to be grouped over
 
 then data = data 
 function = whatever function you want to use like mean, median, sd etc.

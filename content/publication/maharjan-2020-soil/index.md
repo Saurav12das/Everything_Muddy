@@ -1,6 +1,5 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
-
 title: 'Soil Health Gap: A concept to establish a benchmark for soil health management'
 subtitle: ''
 summary: ''

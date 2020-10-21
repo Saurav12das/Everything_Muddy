@@ -11,7 +11,7 @@ tags:
   - Tutorial
 ---
 
-<h2> Data Wrangling </h2>
+<h2> Data Wrangling with aggregate, ddply function</h2>
 
 ```{r message=FALSE}
 library(dplyr)

@@ -1,5 +1,6 @@
 ---
 title: Data Wrangling_01
+subtitle: aggregate, ddply 
 author: Saurav Das
 date: '2020-10-21'
 slug: data-wrangling-01
@@ -20,8 +21,8 @@ library(plyr)</code></pre>
 <h4>
 Data transformation/wrangling is one of the most important process in visualization and statistical analysis
 </h4>
-<p>So here we will use two functions. one is <strong>aggregate</strong> and one is <strong>ddply</strong></p>
-<p>The story is like, my friend was asking to plot some simple bar graphs based on his anova results (he is doing works how different rates of nitrogen can effect winter wheat yield and protein content and the experiment is replicated over four different places and four times (same treatment) in single location). He found interactions between some variables (like Nrate and Variety; Nrate and Application timings) and he wanted to do average over interactive variables and doing mean/error calculations over the replication keeping different rates/var as unique factors and plot them in simple bars using different variables as aesthetics, but it was too much struggling for me to group/subset over multiple variables and then summarize the data over some other functions. I have to go through writing several custom functions. But then I stumbled upon these functions, they are pretty handy and everything can be done in one single steps.</p>
+<p>So here we will use two functions. one is <strong>aggregate</strong> and another is <strong>ddply</strong></p>
+<p>The story is like, my friend was asking to plot some simple bar graphs based on his anova results (he is doing works how different rates of nitrogen can effect winter wheat yield and protein content and the experiment is replicated over four different places and four times (same treatment) in single location). He found interactions between some variables (like Nrate and Variety; Nrate and Application timings) and he wanted to do average over interactive variables and doing mean/error calculations over the replication keeping different rates/var as unique factors and plot them in simple bars using different variables as aesthetics, but it was too much struggling for me to group/subset over multiple variables and then summarize the data over some other functions. I have to go through writing several custom functions and even using dplyr group_by but somehow there was always some errors. But then I stumbled upon these functions, they are pretty handy and everything can be done in one single steps.</p>
 <p>So, I cannot use that datasets what I used, but here is a similar dataset (CO2) where,
 The CO2 uptake of six plants from Quebec and six plants from Mississippi was measured at several levels of ambient CO2 concentration. Half the plants of each type were chilled overnight before the experiment was conducted and half were non-chilled.</p>
 <p>So data structure is two location, two different treatment for each location (chilled, non-chilled), then each of the treated plant were exposed to seven different concentration of carbon dioxide and their uptake was measured and above all each plant has unique id.</p>
@@ -107,4 +108,32 @@ ddply(CO2, c(&quot;Treatment&quot;, &quot;conc&quot;), summarise, mean = mean(up
 ## 12    chilled  500 26.65000 11.445479
 ## 13    chilled  675 27.88333 10.958361
 ## 14    chilled 1000 29.78333 12.410547</code></pre>
+<p>However, you can achieve the same also using summarise from dplyr.</p>
+<p><strong>note: when I was using summarise function previously it was always returning one single value only and I couldn’t figure out where the error was. Then I found out there are two different summarise function one from plyr and other is from dplyr package and both works differently</strong></p>
+<p>Here, this one is from <strong>plyr</strong></p>
+<pre class="r"><code>CO2 %&gt;% group_by(Treatment, conc) %&gt;% summarise(mean = mean(uptake), sd = sd(uptake),                                             N = 7, se = sd/sqrt(N))</code></pre>
+<pre><code>##      mean       sd N       se
+## 1 27.2131 10.81441 7 4.087464</code></pre>
+<p>This one is from <strong>dplyr</strong></p>
+<pre class="r"><code>CO2 %&gt;% group_by(Treatment, conc) %&gt;% dplyr::summarise(mean_uptake = mean(uptake), sd = sd(uptake), 
+                                                N = 7, se = sd/sqrt(N))</code></pre>
+<pre><code>## `summarise()` regrouping output by &#39;Treatment&#39; (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 14 x 6
+## # Groups:   Treatment [2]
+##    Treatment   conc mean_uptake    sd     N    se
+##    &lt;fct&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 nonchilled    95        13.3  2.40     7 0.907
+##  2 nonchilled   175        25.1  5.71     7 2.16 
+##  3 nonchilled   250        32.5  5.92     7 2.24 
+##  4 nonchilled   350        35.1  6.12     7 2.31 
+##  5 nonchilled   500        35.1  5.65     7 2.14 
+##  6 nonchilled   675        36.0  6.34     7 2.40 
+##  7 nonchilled  1000        37.4  7.06     7 2.67 
+##  8 chilled       95        11.2  2.86     7 1.08 
+##  9 chilled      175        19.4  5.89     7 2.22 
+## 10 chilled      250        25.3 10.6      7 3.99 
+## 11 chilled      350        26.2 10.8      7 4.09 
+## 12 chilled      500        26.6 11.4      7 4.33 
+## 13 chilled      675        27.9 11.0      7 4.14 
+## 14 chilled     1000        29.8 12.4      7 4.69</code></pre>
 <p>–</p>

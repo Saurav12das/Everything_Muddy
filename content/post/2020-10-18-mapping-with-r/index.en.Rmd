@@ -11,3 +11,27 @@ tags:
   - Mapping
 ---
 
+Loading the libraries
+
+```{r}
+remotes::install_github("Nowosad/spDataLarge") #loads larger geographic data
+```
+
+```{r message=FALSE}
+library(sf) #for vector data
+library(raster) #for raster data
+library(spData) #for geographic data
+library(spDataLarge)
+```
+
+<h1> Basic Map </h1>
+
+Basic map can be created with plot function from sf package. By default sf creates multi panel plots, one sub-plot for each variable of the object. 
+
+for example:
+
+```{r}
+plot(us_states)
+```
+
+

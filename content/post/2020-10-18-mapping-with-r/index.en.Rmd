@@ -24,7 +24,19 @@ library(spData) #for geographic data
 library(spDataLarge)
 ```
 
-<h1> Basic Map </h1>
+Mapping is one of the important tool to understand spatial changes over time. 
+
+Now, the question comes why R?
+
+R is an object orient functional programming language which provides interactive interface to other software and makes important tool for geographers. R contains includes many bridges to trove of GIS software, geolibraries and functions. Constant development of packages and functions has also overcome earlier limitation of interactive mapping which was considered as one of the drawback or lacking point in R. 
+
+So, now lets start with geographic modeling. So there are basic two types of fundamental geographic data model: Vector and Raster.
+
+<li><b> Vector: Vector data model represents the world using points, lines and polygons. These are datas are discrete with well defined borders </b></li>
+
+<li> Raster: Raster data models divides the surface up into cells of constant size. Raster datasets are the basis of background images used in the web-mapping and have been a vital source of geographic data since the origin of aerial photography and staelite based remote sensing devices.
+
+<h2> Basic Map </h2>
 
 Basic map can be created with plot function from sf package. By default sf creates multi panel plots, one sub-plot for each variable of the object. 
 
@@ -34,4 +46,53 @@ for example:
 plot(us_states)
 ```
 
+you can also create single plot specifying the varibale.
 
+```{r}
+plot(world["pop"])
+```
+
+You can add more layers also by setting **"add = TRUE"** 
+Now, here a variabl of asia continent was created and which will be added as a layer in the next plot.
+
+```{r}
+world_asia = world[world$continent == "Asia", ]
+asia = st_union(world_asia)
+```
+
+
+```{r}
+plot(world["pop"], reset = FALSE)
+plot(asia, add = TRUE, col = "red")
+```
+
+There are various other ways to modify the sf plotting function. For eg. 
+
+```{r message=FALSE, warning=FALSE}
+plot(world["continent"], reset = FALSE)
+cex = sqrt(world$pop) / 10000
+world_cents = st_centroid(world, of_largest = TRUE)
+plot(st_geometry(world_cents), add = TRUE, cex = cex)
+```
+
+
+```{r}
+india = world[world$name_long == "India", ]
+plot(st_geometry(india), expandBB = c(0, 0.2, 0.1, 1), col = "gray", lwd = 3)
+plot(world_asia[0], add = TRUE)
+```
+
+
+Now lets talk about **geometry**
+
+Geometries are the basic building blocks of mapping. There are different types of geometry but most commons used in mapping system are,
+
+1. Point
+2. Linestring
+3. Polygon
+4. Multipoint
+5. Multilinestring
+6. Multipolygon
+7. Geometrycollection
+
+WKB or well known binary and WKt or well known text are the standard encoding in simple feature package for geometries.

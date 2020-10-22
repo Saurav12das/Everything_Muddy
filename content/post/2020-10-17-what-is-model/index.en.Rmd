@@ -11,9 +11,9 @@ tags:
 
 So, when we start discussion or thinking about model, some complex equation or some mathematical derivation comes to your mind, but for now lets start this things from a simple definition 
 
-<h2>1. What is "Model" ?</h2>
+<h3>1. What is "Model" ?</h3>
 
-<h5> The most common thing about model is "A model is a representation for a particular thing with particular purpose" </h5>
+<h6> The most common thing about model is "A model is a representation for a particular thing with particular purpose" </h6>
 
 we have been exposed/experienced or used different kinds of models from our childhood. Lets say, a toy, a toy is a representation of particular animal/tree or humans, but its not the real or true animal, its a representation of a particular animal.
 
@@ -23,7 +23,7 @@ When you create a model you always start with a **purpose** in your mind. Like t
 
 Model always miss out few things, get some more thing, many things goes wrong.So, for model there is no need for a question like **is the model true ?**, if truth is to be the whole truth the answer will be no. The model is only representation and the question of interest should **is the model useful?** A good model is close to the thing its trying to represent.
 
-<b><i><h4> George Box told all models are wrong but some are useful </b></i></h4>
+<b><i><h6> George Box told all models are wrong but some are useful </b></i></h6>
 
 Statistical models generally revolve around data. There are three main uses/purpose of statistical models.
 
@@ -34,7 +34,7 @@ Statistical models generally revolve around data. There are three main uses/purp
 3. **Consequences/Making decisions** - Now you are active participant in the model making the decisions based on your model predictions. For eg. To what extent will paying teachers more increase student performance ?
 
 
-<h5> Okay, now before heading directly towards doing modeling, lets discuss some basic terms like variables, samples etc. </h5>
+<h6> Okay, now before heading directly towards doing modeling, lets discuss some basic terms like variables, samples etc. </h6>
 
 
 

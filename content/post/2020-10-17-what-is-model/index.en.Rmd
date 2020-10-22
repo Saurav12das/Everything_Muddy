@@ -11,7 +11,7 @@ tags:
 
 So, when we start discussion or thinking about model, some complex equation or some mathematical derivation comes to your mind, but for now lets start this things from a simple definition 
 
-<h2> 1. What is "Model" ? </h2>
+<h2>1. What is "Model" ?</h2>
 
 <h5> The most common thing about model is "A model is a representation for a particular thing with particular purpose" </h5>
 

@@ -13,7 +13,7 @@ So, when we start discussion or thinking about model, some complex equation or s
 
 # 1. What is "Model" ?
 
-### The most common thing about model is "A model is a representation for a particular thing with particular purpose"
+<h4> The most common thing about model is "A model is a representation for a particular thing with particular purpose" </h4>
 
 we have been exposed/experienced or used different kinds of models from our childhood. Lets say, a toy, a toy is a representation of particular animal/tree or humans, but its not the real or true animal, its a representation of a particular animal.
 
@@ -34,7 +34,7 @@ Statistical models generally revolve around data. There are three main uses/purp
 3. **Consequences/Making decisions** - Now you are active participant in the model making the decisions based on your model predictions. For eg. To what extent will paying teachers more increase student performance ?
 
 
-### Okay, now before heading directly towards doing modeling, lets discuss some basic terms like variables, samples etc.
+<h4> Okay, now before heading directly towards doing modeling, lets discuss some basic terms like variables, samples etc. </h4>
 
 
 

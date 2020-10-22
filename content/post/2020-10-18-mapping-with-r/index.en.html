@@ -13,4 +13,19 @@ tags:
 
 
 
-
+<p>Loading the libraries</p>
+<pre class="r"><code>remotes::install_github(&quot;Nowosad/spDataLarge&quot;) #loads larger geographic data</code></pre>
+<pre><code>## Skipping install of &#39;spDataLarge&#39; from a github remote, the SHA1 (4c5795f0) has not changed since last install.
+##   Use `force = TRUE` to force installation</code></pre>
+<pre class="r"><code>library(sf) #for vector data
+library(raster) #for raster data
+library(spData) #for geographic data</code></pre>
+<pre><code>## Warning: package &#39;spData&#39; was built under R version 4.0.3</code></pre>
+<pre class="r"><code>library(spDataLarge)</code></pre>
+<h1>
+Basic Map
+</h1>
+<p>Basic map can be created with plot function from sf package. By default sf creates multi panel plots, one sub-plot for each variable of the object.</p>
+<p>for example:</p>
+<pre class="r"><code>plot(us_states)</code></pre>
+<p><img src="/post/2020-10-18-mapping-with-r/index.en_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>

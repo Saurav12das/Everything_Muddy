@@ -13,7 +13,7 @@ So, when start discussion or thinking about model, some complex equation or some
 
 # 1. What is "Model" ?
 
-### The most common thing about model is "A model is a representation for a particular thing with particular purpose"
+## The most common thing about model is "A model is a representation for a particular thing with particular purpose"
 
 we have been exposed/experienced or used different kinds of models from our childhood. Lets say, a toy, a toy is a representation of particular animal/tree or humans, but its not the real or true animal, its a representation of a particular animal.
 

@@ -1,0 +1,11 @@
+---
+title: Baseline Reference Mapping for Ecological Sites
+author: Saurav Das
+date: '2020-10-23'
+slug: baseline-reference-mapping-for-ecological-sites
+categories: []
+tags: [Soil Health]
+---
+The project aims in establishing soil health reference map for the State of Nebraska. This project will use NRCS Major Land Resource Areas and Ecological Sites to identify and determine sites that can serve as benchmarks for soil health management in NE croplands. The project will explore inherent soil conditions that occur under non-degraded native plant communities as explained in [NRCS Soil Change Guide](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/nrcs142p2_052923.pdf). The project aims to develop the soil health reference map that will stage a platform for comparison studies in croplands with respect to native soil across the State.
+
+

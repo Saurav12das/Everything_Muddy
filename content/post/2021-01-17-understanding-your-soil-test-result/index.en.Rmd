@@ -56,7 +56,7 @@ A soil pH is an indicator of the level of acidity or alkalinity of the soil. Res
 
 A buffer pH (BpH) test is used to determine the lime requirement to change the soil pH to desirable level.if the BpH is small, then soil pH will be difficult to change and will require larger rate of lime, while if the BpH change is large, the required lime will be less.
 
-Note: Soil pH determines the availability of nutrients.
+Note: Soil pH determines the availability of nutrients
 
 For Reference:
 1. https://store.extension.iastate.edu/product/Interpretation-of-Soil-Test-Results

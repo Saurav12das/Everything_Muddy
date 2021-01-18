@@ -1,0 +1,63 @@
+---
+title: Understanding Your Soil Test Result
+author: Saurav Das
+date: '2021-01-17'
+slug: understanding-your-soil-test-result
+categories: []
+tags: []
+---
+
+*Reading and Interpreting Soil Test Results*
+
+**Purpose**
+Soil testing is used to asses soil nutrient status and to determine the nutrient needed for optimum growth and yield
+
+**Sampling**
+Soil sampling must be done properly to get quality soil test results.
+
+<li>Each sample should be representative of the entire field or specified sampling unit</li>
+
+<li>Sample must be taken at the proper depth during the same time each year to measure the va</li>
+
+<li>Usual sample depth is 6 -12 inch</li>
+
+Note: When reviewing the lab results, it is important to know what extraction method was used and how the results were reported. Labs may report results in ppm or lb/acre
+
+to convert ppm  to lb/ac = ppm x 2
+to convert lb/ac to ppm/ac = (lb/ac)/2
+
+**Soil Parameters**
+Soil test results includes:
+
+Macronutrients = Nitrogen, Phosphorus, Potassium + secondary macronutrients (Sulfur, Calcium,Magnessium)
+
+Micronutrients = Copper, Iron, Manganese, Zinc, Boron, Chloride, Nickel, and Molybdenum.
+
+**Nitrogen**
+
+An adequate amount of N is required for photosynthetic activity, and growth. There are two forms of available N: nitrate (NO3-) and ammonium (NH4+). Nitrate is mostly reported as lb/ac in soil test results. It is important to know, nitrate level in the soil test results reflect what amount of nitrate is available and not what which will be available through the process of mineralization of organic matter or what is lost through leaching and denitrification. 
+
+Late spring Nitrate Test, also known as the Pre-sidedress Nitrate Test (PSNT), which may be used in-season when corn plant are 6-12 inches tall and to determine how much N should be sidedressed. Nitrate threshold is mostly regional.
+
+**Phosphorus**
+
+Phosphorus is need by the plant to store energy created from photosynthesis and carbohydrate metabolism. Phosphorus is not naturally abundant as other macronutrients. The availability of phosphorus is soil pH dependent. There are different P extraction methods depending on the soil pH:
+          <li>Bray P (acidic soil)</li>
+          <li>Mehlich-3 P (acidic soil)</li>
+          <li>Olsen P (neutral-alkaline)</li>
+          
+Test results will vary based on the extraction method.
+
+Olsen P (ppm) : Very Low = 0-8; Low = 6-9; Optimum = 10-13; High = 14-18; Very High=19+
+
+**Soil pH**
+
+A soil pH is an indicator of the level of acidity or alkalinity of the soil. Results of soil pH are reported on a logarithm scale, i.e. a soil with pH of 6 is 10 times more acidic than a soil with pH of 7, a soil with pH of 5 will be 100 times more acidic than soil with pH of 7
+
+A buffer pH (BpH) test is used to determine the lime requirement to change the soil pH to desirable level.if the BpH is small, then soil pH will be difficult to change and will require larger rate of lime, while if the BpH change is large, the required lime will be less.
+
+Note: Soil pH determines the availability of nutrients.
+
+For Reference:
+1. https://store.extension.iastate.edu/product/Interpretation-of-Soil-Test-Results
+

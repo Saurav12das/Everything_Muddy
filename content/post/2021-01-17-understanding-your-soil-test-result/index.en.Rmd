@@ -7,7 +7,7 @@ categories: []
 tags: []
 ---
 
-*Reading and Interpreting Soil Test Results*
+<h1><b>Reading and Interpreting Soil Test Results</b></h1>
 
 **Purpose**
 Soil testing is used to asses soil nutrient status and to determine the nutrient needed for optimum growth and yield

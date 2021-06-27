@@ -13,7 +13,7 @@
 #   Latest themes (may require updating): https://sourcethemes.com/academic/themes/
 #   Browse built-in themes in `themes/academic/data/themes/`
 #   Browse user installed themes in `data/themes/`
-theme = "saurav"
+theme = saurav
 
 # Enable users to switch between day and night mode?
 day_night = false
@@ -170,13 +170,13 @@ plugins_js  = []
 
   # Citation style ("apa" or "mla")
   citation_style = "apa"
-  
+
   #link the title of the publication to the publiation
   link_title = true
-  
+
   #link author of the publication to the list of publication made by this author
   link_author = true
-  
+
 # Configuration of project pages.
 [projects]
   # Views for associated content.

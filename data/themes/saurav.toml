@@ -5,11 +5,11 @@ name = "saurav"
 light = true
 
 # Primary
-primary = "#FCF3CF"
+primary = "#000000"
 
 # Menu
 menu_primary = "#F0F7FA"
-menu_text = "#172A3A"
+menu_text = "#000000"
 menu_text_active = "#06805E"
 menu_title = "#172A3A"
 
